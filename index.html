@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./assets/icons/boo.gif">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="./css/main.css" rel="stylesheet">
+    <title>Jacob Folstrom Portfolio</title>
+</head>
+<body>
+    <!-- this is the navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a id="triplebar" onclick="openNav()" class="navbar-brand" href="javascript:void(0)">&#9776;</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#"><img id="img1" src="./assets/icons/alien.gif" /></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><img id="img2" src="./assets/icons/aesthetic.jpg" /></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#"><img id="img3" src="./assets/icons/aesthesis-clipart-pale-4.gif" /></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#"><img id="img4" src="./assets/icons/toilet.gif" /></a>
+                    </li>
+                    <li class="collapse-nav">
+                        <a id="collapse" style="display: inline;" href="javascript:void(0)" onclick="closeNav()">&times;</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <audio id="my_audio" src="" controls autoplay="false"></audio>
+              <ul id="playlist">Music&nbsp;&nbsp;<button class="downarrow" onclick="thisFunction()" id="dropaudios">↓</button>
+                <div id="list">
+                <li id="song1" class="current-song"><a href="./assets/Sounds/Summers.mp3">1</a></li>
+                <li id="song2" ><a href="./assets/Sounds/fantasizing.mp3">2</a></li>
+                <li id="song3" ><a href="./assets/Sounds/sodeep.mp3">3</a></li>
+                <li id="song4" ><a href="./assets/Sounds/growingup.mp3">4</a></li>
+                <li id="song5" ><a href="./assets/Sounds/alliwant.mp3">5</a></li>
+                <li id="song6" ><a href="./assets/Sounds/sims.mp3">6</a></li>
+                </div>
+              </ul>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+  let l = document.getElementById('list')
+  // function closeList(){
+  //   l.style.visibility = "hidden"
+  // // }
+  window.onload = function(){
+    l.style.visibility = "hidden"
+  }
+  function thisFunction(){ 
+    if (l.style.visibility == "hidden")
+        { l.style.visibility = "visible"}
+       else { l.style.visibility = "hidden" }
+      }
+$('.downarrow').click(function(){
+  var $this = $(this)
+  $this.toggleClass('downarrow')
+  if ($this.hasClass('downarrow')){
+    $this.text('↓')
+  } else {
+    $this.text('↑')
+  }
+})
+
+
+var play = false;
+var myList = document.getElementById("playlist")
+var myAudio = document.getElementById("my_audio");
+
+function onKeyDown(event) {
+        switch (event.keyCode) {
+            case 32: //SpaceBar                    
+                if (play) {
+                    myAudio.pause();
+                    play = false;
+                    $("#playlist li").removeClass("current-song")
+                    currentSong = $(this).parent().index()
+                    (this).parent().addClass("current-song")
+                } else {
+                    myAudio.play(); 
+                    play = true;
+                }
+                break;
+        }
+  return false;
+}
+window.addEventListener("keydown", onKeyDown, false);
+
+my_audio()
+function my_audio(){
+var currentSong = 0
+$("#my_audio")[0].src = $("#playlist li a")[0] 
+$("#my_audio")[0].play()
+$("#playlist li a").click(function(e){
+  e.preventDefault()
+  $("#my_audio")[0].src = this
+  $("#my_audio")[0].play()
+  $("#playlist li").removeClass("current-song")
+  currentSong = $(this).parent().index()
+  $(this).parent().addClass("current-song")
+})
+$("#my_audio")[0].addEventListener("ended", function() {
+  currentSong++
+if(currentSong == $("#playlist li a").length)
+currentSong = 0
+$("#playlist li").removeClass("current-song")
+$("#playlist li:eq("+currentSong+")").addClass("current-song")
+$("#my_audio")[0].src = $("#playlist li a")[currentSong].href
+$("#my_audio")[0].play()
+})
+}
+    // window.onload = function() {
+    //     document.getElementById("my_audio").play();
+    // }
+function openNav() {
+    document.getElementById('img1').style.opacity = "1";
+    document.getElementById('img2').style.opacity = "1";
+    document.getElementById('img3').style.opacity = "1";
+    document.getElementById('img4').style.opacity = "1";
+    document.getElementById('collapse').style.opacity = "1";
+}
+function closeNav(){
+    document.getElementById('img1').style.opacity = "0";
+    document.getElementById('img2').style.opacity = "0";
+    document.getElementById('img3').style.opacity = "0";
+    document.getElementById('img4').style.opacity = "0";
+    document.getElementById('collapse').style.opacity = "0";
+}
+</script>
+<!-- if i want an iframe vv -->
+<!-- <iframe id="player" width="100%" height="100px;" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/607244745&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe> -->
+</body>
+</html>

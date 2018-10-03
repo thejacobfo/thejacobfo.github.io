@@ -1,0 +1,38 @@
+#img1, #img2, #img3, #img4, #collapse {
+    position: inline;
+    transition-timing-function: ease-in;
+    opacity: 0;
+    transition: 1s;
+    height: 30px;
+    width: 35px;
+}
+#img1:active, #img2:active, #img3:active, #img4:active {
+    height: 45px;
+    width: 42.5px;
+    padding: 5px;
+    transition: 0s;
+    border: 2px solid black;
+}
+#img1:hover, #img2:hover, #img3:hover, #img4:hover, #collapse:hover {
+    height: 45px;
+    width: 42.5px;
+    padding: 5px;
+    transition: 0s;
+}
+.nav-link {
+    font-size: 36px;
+    position: inline;
+}
+.navbar-brand {
+    font-size: 36px;
+    position: inline;
+}
+#triplebar:link {
+    color: #4e4d4e;
+}
+#collapse:link {
+    top: 25px;
+font-size: 36px;
+position: inline;
+color: #4e4d4e;
+}

@@ -26,3 +26,7 @@
     font-family: 'PWNewArrows';
     src: url('../assets/Fonts/PWNewArrows.ttf')
 }
+@font-face {
+    font-family: 'Fonte\_Brick';
+    src: url('../assets/Fonts/FonteBrick.ttf')
+}

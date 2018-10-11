@@ -1,13 +1,28 @@
 body {
     background-color: --black;
 }
-#dropaudios {
-    position: inline-block;
-    height: 25px;
-    width: 45px;
-    border-radius: 200px;
-    box-shadow: 4px 3px 5px black;
+#playlist {
+    font-family: 'LL_REC0R';
+    overflow: hidden;
+    font-size: 28px;
 }
+#playlist h1:hover {
+    color: rgb(209, 82, 109);
+}
+#dropaudios {
+    height: 45px;
+    width: 45px;
+    /* box-shadow: 4px 3px 5px black; */
+}
+ #dropaudios:hover {
+background-color: rgba(255, 88, 88, 0.329);
+    color: rgba(119, 40, 40, 0.795);
+}
+/* #dropaudios:active {
+     position: inline-block;
+    box-shadow: 4px 4px 10px rgba(7, 3, 3, 0.795);
+}
+
 #dropaudios:hover li{
     animation: arrowhover 1s infinite;
 }
@@ -15,11 +30,24 @@ body {
     0% {opacity: 1;}
     50% {opacity: 0;}
     100% {opacity: 1;}
-}
+} */
 #list {
-    visibility: hidden;
+    display: none;
     transition: 0.4s;
 }
 #dropaudios:focus #list {
     visibility: visible;
+}
+#snip {
+    resize: horizontal;
+    overflow: hidden;
+}
+#pp {
+    position: fixed;
+}
+#breakafterapi {
+    background: palegoldenrod;
+    width: 100%;
+    height: 50px;
+    padding-bottom: 10em;
 }

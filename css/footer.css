@@ -1,10 +1,10 @@
 #my_audio {
-    opacity: 0.25;
+    opacity: 0.55;
     bottom: 0;
     position: fixed;
 }
 #my_audio:hover {
-    opacity: 0.55;
+    opacity: 0.75;
 }
 .current-song {
     animation: pulse 1s infinite;

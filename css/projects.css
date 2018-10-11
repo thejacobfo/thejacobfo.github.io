@@ -1,0 +1,14 @@
+#projects h1 {
+    font-family: 'ToyBlocks';
+}
+#cre, #tut, #api {
+    text-indent: 1em;
+    font-family: "Neon80s"
+}
+#projects {
+    text-align: center;
+    margin-left: 4em;
+}
+#api {
+    padding-bottom: 20em;
+}

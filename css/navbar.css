@@ -1,23 +1,23 @@
-#img1, #img2, #img3, #img4, #collapse {
+#img1, #img2, #img3, #img4 {
+    top: 0px;
     position: inline;
-    transition-timing-function: ease-in;
+    /* transition-timing-function: ease-in; */
     opacity: 0;
-    transition: 1s;
-    height: 30px;
-    width: 35px;
+    display: none;
+    transition: opacity 1s, display 1s;
+    height: 38px;
+    width: 37.5px;
 }
 #img1:active, #img2:active, #img3:active, #img4:active {
-    height: 45px;
-    width: 42.5px;
-    padding: 5px;
     transition: 0s;
+    height: 40px;
+    width: 38px;
+    padding: 5px;
     border: 2px solid black;
 }
-#img1:hover, #img2:hover, #img3:hover, #img4:hover, #collapse:hover {
-    height: 45px;
-    width: 42.5px;
-    padding: 5px;
+#img1:hover, #img2:hover, #img3:hover, #img4:hover{
     transition: 0s;
+    padding: 5px;
 }
 .nav-link {
     font-size: 36px;
@@ -30,9 +30,10 @@
 #triplebar:link {
     color: #4e4d4e;
 }
-#collapse:link {
+/* #collapse:link {
+    transition: 0s;
     top: 25px;
 font-size: 36px;
 position: inline;
 color: #4e4d4e;
-}
+} */

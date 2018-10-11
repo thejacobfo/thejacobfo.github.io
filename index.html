@@ -22,22 +22,24 @@
                       <a class="nav-link" href="#"><img id="img1" src="./assets/icons/alien.gif" /></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#"><img id="img2" src="./assets/icons/aesthetic.jpg" /></a>
+                      <a class="nav-link" href="#projects"><img id="img2" src="./assets/icons/aesthetic.jpg" /></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="#"><img id="img3" src="./assets/icons/aesthesis-clipart-pale-4.gif" /></a>
+                      <a class="nav-link" href="#about"><img id="img3" src="./assets/icons/e77.gif" /></a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link disabled" href="#"><img id="img4" src="./assets/icons/toilet.gif" /></a>
+                      <a class="nav-link disabled" href="#contact"><img id="img4" src="./assets/icons/toilet.gif" /></a>
                     </li>
-                    <li class="collapse-nav">
+                    <!-- // this is an "X" to close the navbar (OPTIONAL) // -->
+                    <!-- <li class="collapse-nav"> 
                         <a id="collapse" style="display: inline;" href="javascript:void(0)" onclick="closeNav()">&times;</a>
-                    </li>
+                    </li> -->
                   </ul>
                 </div>
               </nav>
               <audio id="my_audio" src="" controls autoplay="false"></audio>
-              <ul id="playlist">Music&nbsp;&nbsp;<button class="downarrow" onclick="thisFunction()" id="dropaudios">↓</button>
+              <ul id="playlist">
+                  <input type="image" class="downarrow" onclick="thisFunction()" value="R" id="dropaudios"></input>
                 <div id="list">
                 <li id="song1" class="current-song"><a href="./assets/Sounds/Summers.mp3">1</a></li>
                 <li id="song2" ><a href="./assets/Sounds/fantasizing.mp3">2</a></li>
@@ -47,32 +49,66 @@
                 <li id="song6" ><a href="./assets/Sounds/sims.mp3">6</a></li>
                 </div>
               </ul>
+              <div id="intro">
+                <p>Hello! So you've stumbled upon my Portfolio via an html page! This means less typing/"reading"...I'll let you go, but just know you can click on the top left icon to open the navigation menu! Also you can click on the music down arrow to select a different track, and the audio player is fixed at the bottom of this page! So at anytime you'd like to pause a song, go right ahead! Thank YOU so much and have a great day!</p>
+              </div>
+              <div id="projects">
+                <h1>Projects</h1>
+                <li id="cre"><a href="javascript:void()" onclick="showsnip()">CSS Creature</a></li>
+                <script>
+                function showsnip(){
+                  if(document.getElementById('snip').style.display == "none"){document.getElementById('snip').style.display = "inline-block";}
+                  else{document.getElementById('snip').style.display = "none";}}</script>
+                <div style="display: none;" id="snip"><p id="pp" data-height="350" data-theme-id="dark" data-slug-hash="yRgwxJ" data-default-tab="css,result" data-user="thejacobfo" data-pen-title="Spooky Buddy" class="codepen">See the Pen <a href="https://codepen.io/thejacobfo/pen/yRgwxJ/">Spooky Buddy</a> by thejacobfo (<a href="https://codepen.io/thejacobfo">@thejacobfo</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                  <script async src="https://static.codepen.io/assets/embed/ei.js"></script></div>
+                <li id="tut"><a href="https://thejacobfo.github.io/1/">Tutorial Webpage</a></li>
+                <li id="api"><a href="https://api-project-00001.firebaseapp.com/">API Project</a></li>
+              </div>
+              <div id="breakafterapi">
+<div id="about"></div>
+              </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
+  // variables
   let l = document.getElementById('list')
-  // function closeList(){
-  //   l.style.visibility = "hidden"
-  // // }
+  let img1 = document.getElementById('img1')
+  let img2 = document.getElementById('img2')
+  let img3 = document.getElementById('img3')
+  let img4 = document.getElementById('img4')
+  // let col = document.getElementById('collapse')
+
   window.onload = function(){
-    l.style.visibility = "hidden"
-  }
+l.style.display = "none"
+img1.style.display = "none"
+img2.style.display = "none"
+img3.style.display = "none"
+img4.style.display = "none"
+img1.style.opacity = "0"
+img2.style.opacity = "0"
+img3.style.opacity = "0"
+img4.style.opacity = "0"
+// col.style.opacity = "0"
+// col.style.visibility = "hidden"
+}
   function thisFunction(){ 
-    if (l.style.visibility == "hidden")
-        { l.style.visibility = "visible"}
-       else { l.style.visibility = "hidden" }
+    if (l.style.display == "none")
+        { l.style.display = "block"}
+       else { l.style.display = "none" }
       }
+
 $('.downarrow').click(function(){
   var $this = $(this)
   $this.toggleClass('downarrow')
   if ($this.hasClass('downarrow')){
-    $this.text('↓')
+    $this.val('R')
   } else {
-    $this.text('↑')
+    $this.val('↓')
   }
 })
+
 
 
 var play = false;
@@ -121,23 +157,26 @@ $("#my_audio")[0].src = $("#playlist li a")[currentSong].href
 $("#my_audio")[0].play()
 })
 }
-    // window.onload = function() {
-    //     document.getElementById("my_audio").play();
-    // }
 function openNav() {
-    document.getElementById('img1').style.opacity = "1";
-    document.getElementById('img2').style.opacity = "1";
-    document.getElementById('img3').style.opacity = "1";
-    document.getElementById('img4').style.opacity = "1";
-    document.getElementById('collapse').style.opacity = "1";
+  if(img1.style.display == "none"){img1.style.display = "inline"} else{img1.style.display = "none"}
+  if(img2.style.display == "none"){img2.style.display = "inline"} else{img2.style.display = "none"}
+  if(img3.style.display == "none"){img3.style.display = "inline"} else{img3.style.display = "none"}
+  if(img4.style.display == "none"){img4.style.display = "inline"} else{img4.style.display = "none"}  
+  if(img1.style.opacity == "0"){img1.style.opacity = "1";} else {img1.style.opacity = "0"};
+  if(img2.style.opacity == "0"){img2.style.opacity = "1";} else {img2.style.opacity = "0"};
+  if(img3.style.opacity == "0"){img3.style.opacity = "1";} else {img3.style.opacity = "0"};
+  if(img4.style.opacity == "0"){img4.style.opacity = "1";} else {img4.style.opacity = "0"};
+  // if(col.style.visibility == "hidden"){col.style.visibility = "visible"} else{col.style.visibility = "hidden"}
+  // if(col.style.opacity == "0"){col.style.opacity = "1";} else {col.style.opacity = "0"};
 }
-function closeNav(){
-    document.getElementById('img1').style.opacity = "0";
-    document.getElementById('img2').style.opacity = "0";
-    document.getElementById('img3').style.opacity = "0";
-    document.getElementById('img4').style.opacity = "0";
-    document.getElementById('collapse').style.opacity = "0";
-}
+// X - close navbar
+// function closeNav(){
+//     img1.style.opacity = "0";
+//     img2.style.opacity = "0";
+//     img3.style.opacity = "0";
+//     img4.style.opacity = "0";
+//     col.style.opacity = "0";
+// }
 </script>
 <!-- if i want an iframe vv -->
 <!-- <iframe id="player" width="100%" height="100px;" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/607244745&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=true"></iframe> -->

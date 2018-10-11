@@ -10,3 +10,19 @@
     --grey: #53565A;
     --black: #272727;
 }
+@font-face {
+    font-family: 'Neon80s';
+    src: url('../assets/Fonts/Neon.ttf')
+}
+@font-face {
+    font-family: 'ToyBlocks';
+    src: url('../assets/Fonts/K26ToyBlocks123.ttf')   
+}
+@font-face {
+    font-family: 'LL_REC0R';
+    src: url('../assets/Fonts/LL_RECOR.TTF');
+}
+@font-face {
+    font-family: 'PWNewArrows';
+    src: url('../assets/Fonts/PWNewArrows.ttf')
+}

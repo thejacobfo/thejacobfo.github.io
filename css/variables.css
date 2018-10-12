@@ -30,3 +30,11 @@
     font-family: 'Fonte\_Brick';
     src: url('../assets/Fonts/FonteBrick.ttf')
 }
+@font-face {
+    font-family: 'COCKTAIL';
+    src: url('../assets/Fonts/COCKB___.TTF')
+}
+@font-face {
+    font-family: 'sm';
+    src: url('../assets/Fonts/Social\ Media\ Circled.otf')
+}

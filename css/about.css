@@ -1,10 +1,44 @@
 #about {
+    padding-bottom: 15em;
+    text-decoration: none;
+    padding-top: 6.5em;
     text-align: center;
- color: rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
 }
-#about p {
+#about h1{
+    transition: background 0.5s, color 1s;
+    background-position: 11.5em 0em;
+    background-repeat: no-repeat;
+    background-size: 100% 0%;
+    background-image: linear-gradient(to right, rgba(83, 158, 219, 0.411) 0, rgba(0, 0, 0, 0) 100%);
+    font-size: 48px;
+    font-family: 'COCKTAIL';
+}
+    #about h1:hover {
+    color: rgb(255, 58, 196);
+     background-size: 25% 100%;
+    }
+/* #about p {
     font-size: 32px;
-    font-stretch: narrower;
+    padding-right: 2em;
+    padding-left: 2em; 
+} */
+/* #construction {
+    font-size: 32px;
+    font-stretch: narrower; 
     font-family: 'Fonte\_Brick';
     padding: 4em;
+} */
+#about p2 {
+    font-size: 32px;
+    padding-right: 2em;
+    padding-left: 2em; 
+    background-image: linear-gradient(to right, rgba(177, 57, 57, 0.692) 0, rgba(18, 170, 197, 0.466) 50%, rgba(0, 0, 0, 0.459) 100%);
+    background-position: 0em 1.1em;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    transition: background 1s;
+}
+#about p2:hover {
+    background-size: 98.5% 100%;
 }
